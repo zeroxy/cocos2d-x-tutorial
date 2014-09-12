@@ -1,4 +1,5 @@
 #include "ZeroxyOpening.h"
+#include "HelloWorldScene.h"
 
 USING_NS_CC;
 
@@ -90,6 +91,9 @@ bool Opening::init()
 
 void Opening::menuStartCallback(Ref* pSender){
 	CCLog("pushed Start!!!");
+
+	Scene* newScene = HelloWorld::createScene();
+	Director::getInstance()->pushScene(newScene);
 }
 void Opening::menuHighscoreCallback(Ref* pSender){
 	CCLog("pushed Highscore!!!");
