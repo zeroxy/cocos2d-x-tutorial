@@ -2,5 +2,9 @@
 /proj.android/gen
 /proj.android/libs
 /proj.android/obj
-/proj.android/jni
+/proj.android/assets
 /cocos2d
+/proj.ios_mac
+/proj.linux
+/proj.win32
+/proj.wp8-xaml

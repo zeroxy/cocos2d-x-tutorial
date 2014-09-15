@@ -86,6 +86,26 @@ bool Opening::init()
 
     sprite->runAction(action);
 
+    CCSprite *charactorSprite = CCSprite::create();
+    charactorSprite->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height/2));
+
+    CCSpriteFrame *sprite_char_ani1 = CCSpriteFrame::create("sma4_sprites-4.png", CCRect(18*1, 18, 18, 29));
+    CCSpriteFrame *sprite_char_ani2 = CCSpriteFrame::create("sma4_sprites-4.png", CCRect(18*2, 18, 18, 29));
+    CCSpriteFrame *sprite_char_ani3 = CCSpriteFrame::create("sma4_sprites-4.png", CCRect(18*3, 18, 18, 29));
+    CCSpriteFrame *sprite_char_ani4 = CCSpriteFrame::create("sma4_sprites-4.png", CCRect(18*4, 18, 18, 29));
+
+    CCAnimation * animation = CCAnimation::create();
+    animation->setDelayPerUnit(0.5f);
+    animation->addSpriteFrame(sprite_char_ani1);
+    animation->addSpriteFrame(sprite_char_ani2);
+    animation->addSpriteFrame(sprite_char_ani3);
+    animation->addSpriteFrame(sprite_char_ani4);
+    animation->setLoops(-1);
+
+    charactorSprite->setScale(20.0f);
+    charactorSprite->runAction(CCAnimate::create(animation));
+    this->addChild(charactorSprite,3);
+
     return true;
 }
 
